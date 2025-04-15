@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Control Panel</title>
+    <style>
+        body { text-align: center; font-family: Arial; background-color: #f4f4f4; }
+        h1 { margin-top: 20px; }
+
+        .video-container {
+            margin: 20px auto;
+            width: 640px;
+            height: 480px;
+            border: 3px solid #333;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        button {
+            width: 120px;
+            height: 50px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🕹️BUMBLEEBEE Manual Car Control Panel</h1>
+
+    <div class="video-container">
+        <img src="{{ url_for('video_feed') }}" width="640" height="480">
+    </div>
+
+    <form method="POST">
+        <div class="btn-group">
+            <button name="command" value="FORWARD">FORWARD</button><br>
+            <button name="command" value="LEFT">LEFT</button>
+            <button name="command" value="STOP">STOP</button>
+            <button name="command" value="RIGHT">RIGHT</button><br>
+            <button name="command" value="BACKWARD">BACKWARD</button>
+        </div>
+    </form>
+</body>
+</html>
